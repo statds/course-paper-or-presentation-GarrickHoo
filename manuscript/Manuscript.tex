@@ -17,7 +17,7 @@
 \doublespace
 
 \begin{abstract}
-    With the housing market fluctuating every year, many real estate owners and businesses face a problem with gaining an accurate representation of the future of the housing market. Lots of people do not know much about the market, so they will go to real estate owners or businesses to learn more about the market. And then see what the market is at and if it is the right time to buy a house. If real estate owners and businesses are able to gain more accuracy in predicting the housing market, they will be able to help more people and possibly gain more business. Not only can this benefit the consumers, the builders are able to move with the market and have a better understanding of it. This paper aims to construct a robust linear regression model by using machine learning techniques to predict housing costs accurately. By leveraging natural language processing, the linear regression model analyzes home property descriptions and extracts vital insights that significantly contribute to precise pricing predictions. This paper ends with an explanation of the limitations of this study and potential future works that can be done.
+With the housing market fluctuating every year, many real estate owners and businesses face a problem with gaining an accurate representation of the future of the housing market. Lots of people do not know much about the market, so they will go to real estate owners or businesses to learn more about the market. And then see what the market is at and if it is the right time to buy a house. If real estate owners and businesses are able to gain more accuracy in predicting the housing market, they will be able to help more people and possibly gain more business. Not only can this benefit the consumers, the builders are able to move with the market and have a better understanding of it. This paper aims to construct a robust linear regression model by using machine learning techniques to predict housing costs accurately. By leveraging natural language processing, the linear regression model analyzes home property descriptions and extracts vital insights that significantly contribute to precise pricing predictions. This paper ends with an explanation of the limitations of this study and potential future works that can be done.
 
 \bigskip
 \noindent{\sc Keywords}:
@@ -30,10 +30,51 @@ model predictions
 \end{abstract}
 
 \section{Introduction}
+\label{sec:intro}
+
+% Why does it matter?
+% What has already been done?
+% What is new?
+
+% An overview of the topic
+% Existing works
+% Why are existing methods not sufficient? What are the elements of an attractive solution?
+% Contributions
+
+% A roadmap
+The rest of the paper is organized in the following way.
+Beginning with the overall introduction located in Section~\ref{sec:intro}.
+A brief introduction about the data will be shown in Section~\ref{sec:data}. Here, the variables will be described and explained how they contribute to the research question.
+Then, the methodology used in this paper will be explained in Section~\ref{sec:meth}.
+Next, the simulation will be reported in Section~\ref{sec:sim}. This section will present the results from the model and have further analysis with tables and figures.
+The applications of the results found will be in Section~\ref{sec:app}. More in-depth analysis of how the results can be applied to the real world will be in this section.
+Finally, the discussion part for this paper will be in Section~\ref{sec:disc}. The limitations of the current study and future direction will be discussed here.
+All the references used in this paper will be included in Section~\ref{sec:refer}.
+
 
 \section{Data}
+\label{sec:data}
+
+% Who collected the data (source)?
+% How was the data collected? Sampling frame? Sampling approach?
+% What period or range does the data cover?
+% Why does the data help answer the research question?
+% What exploratory analyses are done (descriptives, visualization, etc.)?
+
 
 \section{Methods}
+\label{sec:meth}
+
+% Establish notation.
+% What are the observed data?
+% What are the models?
+% What are the parameters to be estimated?
+% How are the point estimators obtained?
+% How are the uncertainty (standard errors) of the point estimators assessed?
+% How are the variances of the point estimators estimated?
+% How are the null distribution of the testing statistics established?
+% Clearly state the assumptions and claims of theoretical results.
+
 
 \begin{equation}
   \label{eq:Multi}
@@ -43,14 +84,36 @@ model predictions
 Equation~\ref{eq:Multi} is the Multiple Linear Regression model being used. \(Y\) is the dependent variable, also known as the value that is being predicted. In this case, it would be the cost of a house. \(X_{n}\) is the independent variable, which is the characteristics of the house that are used to predict the house cost. \(\beta_{n}\) is the average amount by which the dependent variable increases and decreases depending on when the independent variable increases one standard deviation. When all the other independent variables are held constant. \(\beta_{0}\) represents the value of the dependent variable when all the independent variables are equal to zero. \(\epsilon\) is the error term which represents the margin of error within the linear regression model. 
 
 \section{Simulation}
+\label{sec:sim}
+
+% Aims
+% Data generating mechanism
+% Estimand/target of analysis
+% Methods
+% Performance measures
 
 \section{Application}
+\label{sec:app}
+
+% Report the statistical analyses in tables/figures.
+% When summarizing from tables/figures, paint the big picture, rather than reiterating all of the little details.
+% Discussions to link the analyses 
 
 \section{Discussion and Conclusion}
+\label{sec:disc}
 
-\section{Appendix}
+% A summary, again, of the contributions of the research.
+% The research question posed as the `need’ of the introduction must be answered here (Zeiger 2000).
+% Limitations of the current study
+% Future directions.
+
 
 \section{References}
+\label{sec:refer}
 
+% Every reference cited in the paper should appear here.
+% References not cited should not appear here.
+% All are automatically taken care of by BibTeX.
+% Styles are controlled by bib style (.bst file).
 
 \end{document}

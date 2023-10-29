@@ -69,7 +69,7 @@ All the references used in this paper will be included in Section~\ref{sec:refer
 The data that will be used for this study was sourced from \href{https://www.kaggle.com/code/ashydv/housing-price-prediction-linear-regression/input}{Kaggle}. It is a data set that contains \(n = 545\) observations (different house samples) of thirteen variables, seven of which are categorical variables and six are numerical variables. The data set contains features and corresponding labels for training and testing a Multiple Linear Regression (MLR) model to predict the house cost.
 The data was explored and visualized using the pandas library in Python. For the columns that were strings, they have been transformed into an integer data type so that they can be read in the model. More specifically, the 'furnishingstatus' column was broken down into three different columns. One for furnished, one for semi-furnished, and lastly one for unfurnished. 
 
-\begin{table}[ht] 
+\begin{table}
 \caption{Data Description}
   \label{tab:rv}
 \begin{tabular}{llll}
@@ -94,6 +94,20 @@ furnishingstatus & Str & furnished, semi-furnished, unfurnished & \(X_{n}\) \\
 \bigskip
 In Table~\ref{tab:rv}, the 'variable' column shows the names of all the variables that are in the dataset. The 'Data Type' column shows the data type of each variable in the dataset. Note that 'Int' means integer and 'Str' means string. The 'Instance' column shows an example of what a data point for that column would look like. The 'Purpose' column shows the importance of each variable to the machine learning step.
 \end{table}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{categorical_plots.pdf}
+    \caption{Categorical Variable Plots}
+    \label{fig:categorical_plots}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{numerical_plots.pdf}
+    \caption{Numerical Variable Plots}
+    \label{fig:numberical_plots}
+\end{figure}
 
 
 \bigskip

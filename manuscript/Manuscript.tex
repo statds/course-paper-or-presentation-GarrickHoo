@@ -63,8 +63,7 @@ All the references used in this paper will be included in Section~\ref{sec:refer
 % Why does the data help answer the research question?
 % What exploratory analyses are done (descriptives, visualization, etc.)?
 
-The data that will be used for this paper contains five hundred and forty-five houses and the descriptions of each house. The dataset contains features and corresponding labels for training and testing a Multiple Linear Regression (MLR) model to predict the house cost. In total, there are thirteen columns, seven are categorical and six are numerical. This was sourced from \href{https://www.kaggle.com/code/ashydv/housing-price-prediction-linear-regression/input}{Kaggle}. 
-
+The data that will be used for this study was sourced from \href{https://www.kaggle.com/code/ashydv/housing-price-prediction-linear-regression/input}{Kaggle}. It is a data set that contains \(n = 545\) observations (different house samples) of thirteen variables, seven of which are categorical variables and six are numerical variables. The data set contains features and corresponding labels for training and testing a Multiple Linear Regression (MLR) model to predict the house cost.
 The data was explored and visualized using the pandas library in Python. For the columns that were strings, they have been transformed into an integer data type so that they can be read in the model. More specifically, the 'furnishingstatus' column was broken down into three different columns. One for furnished, one for semi-furnished, and lastly one for unfurnished. 
 
 \begin{table}[h] 

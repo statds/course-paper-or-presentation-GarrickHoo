@@ -2,6 +2,7 @@
 \usepackage{graphicx}
 \usepackage[margin=1in]{geometry}
 \usepackage{setspace}
+\usepackage{booktabs}
 
 \title{Predicting the Housing Market using \\ Linear Regression}
 
@@ -61,6 +62,33 @@ All the references used in this paper will be included in Section~\ref{sec:refer
 % Why does the data help answer the research question?
 % What exploratory analyses are done (descriptives, visualization, etc.)?
 
+% total of 545 entries, 13 columns (6 int and 7 str)
+\begin{flushleft}
+\begin{table}[h]
+  \caption{Data Description}
+  \label{tab:rv}
+\centering
+\begin{tabular}{llll}
+  \toprule
+Variable & Data Type & Instance & Purpose \\
+  \midrule
+price & Int & 13300000 & \(Y\) \\ 
+area & Int & 7420 & \(X_{n}\) \\ 
+bedrooms & Int & 4 & \(X_{n}\) \\ 
+bathrooms & Int & 2 & \(X_{n}\) \\ 
+stories & Int & 3 & \(X_{n}\) \\ 
+mainroad & Str & yes, no & \(X_{n}\) \\
+guestroom & Str & yes, no & \(X_{n}\) \\
+basement & Str & yes, no & \(X_{n}\) \\
+hotwaterheating & Str & yes, no & \(X_{n}\) \\
+airconditioning & Str & yes, no & \(X_{n}\) \\
+parking & Int & 2 & \(X_{n}\) \\
+prefarea & Str & yes, no & \(X_{n}\) \\
+furnishingstatus & Str & furnished, semi-furnished, unfurnished & \(X_{n}\) \\
+   \bottomrule
+\end{tabular}
+\end{table}
+\end{flushleft}
 
 \section{Methods}
 \label{sec:meth}

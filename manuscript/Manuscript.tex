@@ -4,8 +4,12 @@
 \usepackage{setspace}
 \usepackage{booktabs}
 \usepackage{hyperref}
-\usepackage[square,numbers]{natbib}
-
+\usepackage[
+backend=biber,
+style=alphabetic,
+]{biblatex}
+\addbibresource{references.bib}
+\usepackage{amsmath} 
 
 
 \title{Predicting the Housing Market using \\ Linear Regression}
@@ -40,6 +44,8 @@ model predictions
 % Why does it matter?
 % What has already been done?
 % What is new?
+
+
 
 % An overview of the topic
 % Existing works
@@ -132,7 +138,8 @@ In figure~\ref{fig:numberical_plots}, four different plots are shown to display 
   Y = \beta_{0} + \beta_{1}X_{1} + \beta_{2}X_{2} + ... + \beta_{n}X_{n} + \epsilon
 \end{equation}
 
-Equation~\ref{eq:Multi} is the Multiple Linear Regression model being used. \(Y\) is the dependent variable, also known as the value that is being predicted. In this case, it would be the cost of a house. \(X_{n}\) is the independent variable, which is the characteristics of the house that are used to predict the house cost. \(\beta_{n}\) is the average amount by which the dependent variable increases and decreases depending on when the independent variable increases one standard deviation. When all the other independent variables are held constant. \(\beta_{0}\) represents the value of the dependent variable when all the independent variables are equal to zero. \(\epsilon\) is the error term which represents the margin of error within the linear regression model. 
+Equation~\ref{eq:Multi} is the Multiple Linear Regression model being used. \(Y\) is the dependent variable, also known as the value that is being predicted. In this case, it would be the cost of a house. \(X_{n}\) is the independent variable, which is the characteristics of the house that are used to predict the house cost. \(\beta_{n}\) is the average amount by which the dependent variable increases and decreases depending on when the independent variable increases one standard deviation. When all the other independent variables are held constant. \(\beta_{0}\) represents the value of the dependent variable when all the independent variables are equal to zero. \(\epsilon\) is the error term which represents the margin of error within the linear regression model. \cite{uyanik2013}
+
 
 \section{Simulation}
 \label{sec:sim}
@@ -142,6 +149,15 @@ Equation~\ref{eq:Multi} is the Multiple Linear Regression model being used. \(Y\
 % Estimand/target of analysis
 % Methods
 % Performance measures
+
+\begin{align}\label{eq:R2}
+\begin{split}
+    R^2 &= 1 - \frac{\text{sum squared regression (SSR)}}{\text{total sum of squares (SST)}}, \\
+    &= 1-\frac{\sum(y_i - \hat{y_i})^2 }{\sum(y_i - \Bar{y})^2} 
+\end{split}
+\end{align}
+
+Equation~\ref{eq:R2} is the formula for R-squared. R-squared is a measure of the goodness of fit of a model. The sum squared regression is the sum of the residuals squared and the total sum of squares is the sum of the distance the data is away from the mean all squared. It is a percentage that takes the values between 0 and 1. If the percentage is 1, then the variation in the \(y\) values is accounted for by the \(x\) values. If the percentage is 0, then none of the variations of the \(y\) values is accounted for by the \(x\) values. \cite{kasuya2018}
 
 \section{Application}
 \label{sec:app}
@@ -168,10 +184,13 @@ Equation~\ref{eq:Multi} is the Multiple Linear Regression model being used. \(Y\
 % Styles are controlled by bib style (.bst file).
 
 
-\cite{singh2021machlearn}
-\cite{alfiyantin2017regress}
+\cite{singh2021}
+\cite{alfiyantin2017}
+\cite{uyanik2013}
 
-\bibliographystyle{plainnat}
-\bibliography{references}
+\medskip
+
+\printbibliography[title={References}]
+
 
 \end{document}

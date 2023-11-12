@@ -128,6 +128,8 @@ In figure~\ref{fig:numberical_plots}, four different plots are shown to display 
 % How are the variances of the point estimators estimated?
 % How are the null distribution of the testing statistics established?
 % Clearly state the assumptions and claims of theoretical results.
+The data was first processed by making all the variables in the data able to be read by the model. The first variable that was altered was the status of the house being furnished. It was converted into dummy variables. A one in the dummy variable would mean that the house was in that current status and a zero would mean that it was not in that status. After that, the next step was to convert the yes and no entries to 1's and 0's. This was done to the variables mainroad, guestroom, basement, hotwaterheating, airconditioning, and prefarea. Before splitting the data set into train and test groups, the variables were scaled because the values for price and the area of the house was significantly much larger than the other values in the data set. Scaling is needed here because we want the values from each variable to contribute equally to the model and avoid the overpowering features with larger values. 
+
 
 
 
@@ -148,7 +150,8 @@ Equation~\ref{eq:Multi} is the Multiple Linear Regression model being used. \(Y\
 % Methods
 % Performance measures
 
-\begin{align}\label{eq:R2}
+\begin{align}
+\label{eq:R2}
 \begin{split}
     R^2 &= 1 - \frac{\text{sum squared regression (SSR)}}{\text{total sum of squares (SST)}}, \\
     &= 1-\frac{\sum(y_i - \hat{y_i})^2 }{\sum(y_i - \Bar{y})^2} 

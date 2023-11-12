@@ -53,7 +53,7 @@ model predictions
 % Contributions
 
 % A roadmap
-The rest of the paper is organized in the following way. Beginning with the overall introduction located in Section~\ref{sec:intro}. A brief introduction about the data will be shown in Section~\ref{sec:data}. Here, the variables will be described and explained how they contribute to the research question. Then, the methodology used in this paper will be explained in Section~\ref{sec:meth}. Next, the simulation will be reported in Section~\ref{sec:sim}. This section will present the results from the model and have further analysis with tables and figures. The applications of the results found will be in Section~\ref{sec:app}. More in-depth analysis of how the results can be applied to the real world will be in this section. Finally, the discussion part for this paper will be in Section~\ref{sec:disc}. The limitations of the current study and future direction will be discussed here.
+The rest of the paper is organized in the following way. Beginning with the overall introduction located in Section~\ref{sec:intro}. A brief introduction about the data will be shown in Section~\ref{sec:data}. Here, the variables will be described and explained how they contribute to the research question. Then, the methodology used in this paper will be explained in Section~\ref{sec:meth}. The applications of the results found will be in Section~\ref{sec:app}. This section will present the results from the model and have further analysis with tables and figures. More in-depth analysis of how the results can be applied to the real world will be in this section. Finally, the discussion part for this paper will be in Section~\ref{sec:disc}. The limitations of the current study and future direction will be discussed here.
 
 
 
@@ -139,16 +139,15 @@ The data was first processed by making all the variables in the data able to be 
 Equation~\ref{eq:Multi} is the Multiple Linear Regression model being used. \(Y\) is the dependent variable, also known as the value that is being predicted. In this case, it would be the cost of a house. \(X_{n}\) is the independent variable, which is the characteristics of the house that are used to predict the house cost. \(\beta_{n}\) is the average amount by which the dependent variable increases and decreases depending on when the independent variable increases one standard deviation. When all the other independent variables are held constant. \(\beta_{0}\) represents the value of the dependent variable when all the independent variables are equal to zero. \(\epsilon\) is the error term which represents the margin of error within the linear regression model. \cite{uyanik2013}
 
 
-\section{Simulation}
-\label{sec:sim}
 
-% Aims
-% Data generating mechanism
-% Estimand/target of analysis
-% Methods
-% Performance measures
+\section{Application}
+\label{sec:app}
 
-This linear regression model aims to predict the house price with the different characteristics of a house by using the trained data and testing it against the testing data. To see how well the model performed in predicting the house prices, \(R^2\) was used and a visualization was created to help see the results.  
+% Report the statistical analyses in tables/figures.
+% When summarizing from tables/figures, paint the big picture, rather than reiterating all of the little details.
+% Discussions to link the analyses 
+
+This linear regression model aims to predict the house price with the different characteristics of a house by using the trained data and testing it against the testing data. To see how well the model performed in predicting the house prices, R-squared was used and a visualization was created to help see the results. The figure below represents how the model did with predicting the house prices. As we can see, there is a clear trend in the plot showing the accuracy of the model. One noticeable trend in the plot is that the model's predicted value of the house is undervalued compared to the actual price of the house. This trend with the model can be supported with the R-squared value. The calculated R-squared value for the model was 0.6529. An R-squared value of 0.6529 indicates the proportion of the variance in the dependent variable that can be explained by the independent variables in a multiple linear regression model. In other terms, about 65.29\% of the variability in the observed data can be accounted for by the model. 
 
 \begin{align}
 \label{eq:R2}
@@ -165,16 +164,8 @@ Equation~\ref{eq:R2} is the formula for R-squared. R-squared is a measure of the
     \includegraphics[width=1\textwidth]{linear_regression_plot.pdf}
     \label{fig:regression_plot}
 \end{figure}
-Figure~\ref{fig:regression_plot} shows a linear regression plot with the predicted house price against the actual house price. Based on this plot that was created, it looks like the model was somewhat accuracy in predicting the prices. 
+Figure~\ref{fig:regression_plot} shows a linear regression plot with the predicted house price against the actual house price. Based on this plot that was created, it looks like the model was somewhat accurate in predicting the prices. 
 
-
-
-\section{Application}
-\label{sec:app}
-
-% Report the statistical analyses in tables/figures.
-% When summarizing from tables/figures, paint the big picture, rather than reiterating all of the little details.
-% Discussions to link the analyses 
 
 \section{Discussion and Conclusion}
 \label{sec:disc}
@@ -183,9 +174,6 @@ Figure~\ref{fig:regression_plot} shows a linear regression plot with the predict
 % The research question posed as the `need’ of the introduction must be answered here (Zeiger 2000).
 % Limitations of the current study
 One limitation of this current study is that this data set is very small and has very limited variables. The next step for this study is to gain access to a data set from the actual house market and produce a model with it. Another factor that can limit this study is that nowadays, there are infinite numbers of factors that can affect the cost of a house. So creating a model to include all these new factors is practically impossible. 
-\\
-\smallskip
-
 
 % Future directions.
 In the last decade, there have been three recessions in the United States. Being able to create a stronger model that can precisely predict the market can be more beneficial than just looking at house prices. If the model can see the fluctuation in the market, then the model can also help predict when the next recession is going to hit. 

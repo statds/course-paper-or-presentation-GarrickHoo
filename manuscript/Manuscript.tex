@@ -128,9 +128,7 @@ In figure~\ref{fig:numberical_plots}, four different plots are shown to display 
 % How are the variances of the point estimators estimated?
 % How are the null distribution of the testing statistics established?
 % Clearly state the assumptions and claims of theoretical results.
-The data was first processed by making all the variables in the data able to be read by the model. The first variable that was altered was the status of the house being furnished. It was converted into dummy variables. A one in the dummy variable would mean that the house was in that current status and a zero would mean that it was not in that status. After that, the next step was to convert the yes and no entries to 1's and 0's. This was done to the variables mainroad, guestroom, basement, hotwaterheating, airconditioning, and prefarea. Before splitting the data set into train and test groups, the variables were scaled because the values for price and the area of the house was significantly much larger than the other values in the data set. Scaling is needed here because we want the values from each variable to contribute equally to the model and avoid the overpowering features with larger values. 
-
-
+The data was first processed by making all the variables in the data able to be read by the model. The first variable that was altered was the status of the house being furnished. It was converted into dummy variables. A one in the dummy variable would mean that the house was in that current status and a zero would mean that it was not in that status. After that, the next step was to convert the yes and no entries to 1's and 0's. This was done to the variables mainroad, guestroom, basement, hotwaterheating, airconditioning, and prefarea. Before splitting the data set into training and testing groups, the variables were scaled because the values for price and the area of the house were significantly larger than the other values in the data set. Scaling is needed here because we want the values from each variable to contribute equally to the model and avoid the overpowering features with larger values. Finally, the data is split into \(80\%\) for training and 20\% for testing. The size of the training group was arbitrarily chosen to be greater than the size of the testing set to ensure that the multiple linear regression model is trained on as much data as possible to find and learn meaningful patterns. It is widely accepted for training data to be larger than testing data. An inadequate amount of training data can result in a poor-performing model that underfits and does not generalize to new instances well. A multiple linear regression model was fitted to the training group and then validated on the testing group using the scikit-learn library in Python. Several performance metrics about the predictions were then assessed.
 
 
 \begin{equation}
@@ -149,6 +147,8 @@ Equation~\ref{eq:Multi} is the Multiple Linear Regression model being used. \(Y\
 % Estimand/target of analysis
 % Methods
 % Performance measures
+
+This linear regression model aims to predict the house price with the different characteristics of a house by using the trained data and testing it against the testing data. To see how well the model performed in predicting the house prices, \(R^2\) was used. 
 
 \begin{align}
 \label{eq:R2}

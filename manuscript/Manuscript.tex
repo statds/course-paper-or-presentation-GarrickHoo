@@ -20,6 +20,7 @@ style=alphabetic,
   University of Connecticut\\
 }
 
+\doublespacing
 \begin{document}
 
 \maketitle
@@ -45,12 +46,16 @@ model predictions
 % What has already been done?
 % What is new?
 
+The United States has been through three recessions in the last decade. And during that decade, house prices have reached the very bottom of the market and also reached the very top of the market. The market has tripled since 1992. After a brief dip in 2002-2003, they bounced back and skyrocketed over 20\% from May 2003 to November 2004. \cite{Jacobsen2005} Because of the constant change, new models for predicting the housing market also need to change so that the model can stay up to date with the changes that occur. This is important because it gives people insights into whether it's a good time to buy or sell a property, helps policymakers make informed decisions, and allows investors to strategize their moves. House price predictions can help the developer determine the selling price of a house and can also help the customer arrange the right time to purchase a house. \cite{alfiyantin2017} 
 
+Engineers in the past had to face a significant challenge in forecasting and assessing house prices. Fortunately, with technological advances, machine learning algorithms offer a solution, enabling users to predict house prices by training data sets on various algorithms. The market is currently flooded with software and models designed to enhance the accuracy of house price predictions, minimizing errors to negligible levels. These predictions can be based on the analysis of different aspects of a house, such as kitchen size, bedroom count, bathroom count, and overall land area. These aspects of a house can go on forever. Analysts employ various techniques to compute and analyze data,  to ensure that the predictions are aligned closely with previous estimations. \cite{singh2021}
 
+Existing methods for predicting housing prices often rely on traditional statistical models that may struggle to capture the complexity and non-linear relationships present in real estate markets. Additionally, these models may not effectively incorporate the wide range of features that influence property values. An attractive solution would involve leveraging advanced machine learning techniques, such as multiple linear regression, to handle the complexity and non-linearity of the data. This allows the model to learn intricate patterns and relationships that may be challenging for traditional methods. Additionally, a comprehensive solution should consider factors such as location, economic indicators, property characteristics, and even social trends to build a more accurate and robust predictive model. The key is to strike a balance between model complexity and interpretability while ensuring it can effectively handle the diverse and dynamic nature of the real estate market.
 % An overview of the topic
 % Existing works
 % Why are existing methods not sufficient? What are the elements of an attractive solution?
 % Contributions
+The main contribution of this paper is to corroborate the findings of prior research papers on this topic.
 
 % A roadmap
 The rest of the paper is organized in the following way. Beginning with the overall introduction located in Section~\ref{sec:intro}. A brief introduction about the data will be shown in Section~\ref{sec:data}. Here, the variables will be described and explained how they contribute to the research question. Then, the methodology used in this paper will be explained in Section~\ref{sec:meth}. The applications of the results found will be in Section~\ref{sec:app}. This section will present the results from the model and have further analysis with tables and figures. More in-depth analysis of how the results can be applied to the real world will be in this section. Finally, the discussion part for this paper will be in Section~\ref{sec:disc}. The limitations of the current study and future direction will be discussed here.
@@ -68,6 +73,7 @@ The rest of the paper is organized in the following way. Beginning with the over
 
 The data that will be used for this study was sourced from \href{https://www.kaggle.com/code/ashydv/housing-price-prediction-linear-regression/input}{Kaggle}. It is a data set that contains \(n = 545\) observations (different house samples) of thirteen variables, seven of which are categorical variables and six are numerical variables. The data set contains features and corresponding labels for training and testing a Multiple Linear Regression (MLR) model to predict the house cost.
 The data was explored and visualized using the pandas library in Python. For the columns that were strings, they have been transformed into an integer data type so that they can be read in the model. More specifically, the 'furnishingstatus' column was broken down into three different columns. One for furnished, one for semi-furnished, and lastly one for unfurnished. 
+
 
 \begin{table}
 \caption{Data Description}
@@ -109,13 +115,6 @@ In figure~\ref{fig:categorical_plots}, the plots show the distributions for all 
 In figure~\ref{fig:numberical_plots}, four different plots are shown to display the distribution of the numerical variables in the data. The average number of bedrooms in these homes is three, with two being the second most. For the number of bathrooms, the majority of homes have one. About half of the homes in the data are one-story homes while about the other half are two stories. For parking, most of them have no parking spots. A few of them have one or two parking spots. 
 \end{figure}
 
-
-\bigskip
-\bigskip
-\bigskip
-\bigskip
-\bigskip
-
 \section{Methods}
 \label{sec:meth}
 
@@ -147,7 +146,7 @@ Equation~\ref{eq:Multi} is the Multiple Linear Regression model being used. \(Y\
 % When summarizing from tables/figures, paint the big picture, rather than reiterating all of the little details.
 % Discussions to link the analyses 
 
-This linear regression model aims to predict the house price with the different characteristics of a house by using the trained data and testing it against the testing data. To see how well the model performed in predicting the house prices, R-squared was used and a visualization was created to help see the results. The figure below represents how the model did with predicting the house prices. As we can see, there is a clear trend in the plot showing the accuracy of the model. One noticeable trend in the plot is that the model's predicted value of the house is undervalued compared to the actual price of the house. This trend with the model can be supported with the R-squared value. The calculated R-squared value for the model was 0.6529. An R-squared value of 0.6529 indicates the proportion of the variance in the dependent variable that can be explained by the independent variables in a multiple linear regression model. In other terms, about 65.29\% of the variability in the observed data can be accounted for by the model. 
+This linear regression model aims to predict the house price with the different characteristics of a house by using the trained data and testing it against the testing data. To see how well the model performed in predicting the house prices, R-squared was used and a visualization was created to help see the results. The figure below represents how the model did with predicting the house prices. As we can see, there is a clear trend in the plot showing the accuracy of the model. One noticeable trend in the plot is that the model's predicted value of the house is undervalued compared to the actual price of the house. This trend with the model can be supported with the R-squared value.
 
 \begin{align}
 \label{eq:R2}
@@ -166,6 +165,7 @@ Equation~\ref{eq:R2} is the formula for R-squared. R-squared is a measure of the
 \end{figure}
 Figure~\ref{fig:regression_plot} shows a linear regression plot with the predicted house price against the actual house price. Based on this plot that was created, it looks like the model was somewhat accurate in predicting the prices. 
 
+The calculated R-squared value for the model was 0.6529. An R-squared value of 0.6529 indicates the proportion of the variance in the dependent variable that can be explained by the independent variables in a multiple linear regression model. In other terms, about 65.29\% of the variability in the observed data can be accounted for by the model. 
 
 \section{Discussion and Conclusion}
 \label{sec:disc}
@@ -178,8 +178,6 @@ One limitation of this current study is that this data set is very small and has
 % Future directions.
 In the last decade, there have been three recessions in the United States. Being able to create a stronger model that can precisely predict the market can be more beneficial than just looking at house prices. If the model can see the fluctuation in the market, then the model can also help predict when the next recession is going to hit. 
 
-\section{References}
-\label{sec:refer}
 
 % Every reference cited in the paper should appear here.
 % References not cited should not appear here.

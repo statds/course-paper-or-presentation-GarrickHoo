@@ -1,0 +1,221 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage[
+backend=biber,
+style=alphabetic,
+]{biblatex}
+\addbibresource{references.bib}
+\usepackage{amsmath} 
+
+
+\title{Predicting the Housing Market using \\ Linear Regression}
+
+\author{Garrick Ho\\
+  Jun Yan\\[1ex]
+  Department of Statistics\\
+  University of Connecticut\\
+}
+
+\doublespacing
+\begin{document}
+
+\maketitle
+\doublespace
+
+\begin{abstract}
+With the housing market fluctuating every year, many real estate owners and businesses face a problem with gaining an accurate representation of the future of the housing market. Lots of people do not know much about the market, so they will go to real estate owners or businesses to learn more about the market. And then see what the market is at and if it is the right time to buy a house. If real estate owners and businesses are able to gain more accuracy in predicting the housing market, they will be able to help more people and possibly gain more business. Not only can this benefit the consumers, the builders are able to move with the market and have a better understanding of it. This paper aims to construct a multiple linear regression model by using machine learning techniques to predict housing costs accurately. This paper ends with an explanation of the limitations of this study and potential future works.
+
+\bigskip
+\noindent{\sc Keywords}:
+housing market;
+natural language processing;
+linear regression;
+model predictions
+
+
+\end{abstract}
+
+\section{Introduction}
+\label{sec:intro}
+
+% Why does it matter?
+% What has already been done?
+% What is new?
+
+The United States has been through three recessions in the last decade. And during that decade, house prices have reached the very bottom of the market and also reached the very top of the market. The market has tripled since 1992. After a brief dip in 2002-2003, they bounced back and skyrocketed over 20\% from May 2003 to November 2004. \cite{Jacobsen2005} Because of the constant change, new models for predicting the housing market also need to change so that the model can stay up to date with the changes that occur. This is important because it gives people insights into whether it's a good time to buy or sell a property, helps policymakers make informed decisions, and allows investors to strategize their moves. House price predictions can help the developer determine the selling price of a house and can also help the customer arrange the right time to purchase a house. \cite{alfiyantin2017} 
+
+Engineers in the past had to face a significant challenge in forecasting and assessing house prices. Fortunately, with technological advances, machine learning algorithms offer a solution, enabling users to predict house prices by training data sets on various algorithms. The market is currently flooded with software and models designed to enhance the accuracy of house price predictions, minimizing errors to negligible levels. These predictions can be based on the analysis of different aspects of a house, such as kitchen size, bedroom count, bathroom count, and overall land area. These aspects of a house can go on forever. Analysts employ various techniques to compute and analyze data,  to ensure that the predictions are aligned closely with previous estimations. \cite{singh2021}
+
+Existing methods for predicting housing prices often rely on traditional statistical models that may struggle to capture the complexity and non-linear relationships present in real estate markets. Additionally, these models may not effectively incorporate the wide range of features that influence property values. An attractive solution would involve leveraging advanced machine learning techniques, such as multiple linear regression, to handle the complexity and non-linearity of the data. This allows the model to learn intricate patterns and relationships that may be challenging for traditional methods. Additionally, a comprehensive solution should consider factors such as location, economic indicators, property characteristics, and even social trends to build a more accurate and robust predictive model. The key is to strike a balance between model complexity and interpretability while ensuring it can effectively handle the diverse and dynamic nature of the real estate market.
+% An overview of the topic
+% Existing works
+% Why are existing methods not sufficient? What are the elements of an attractive solution?
+% Contributions
+
+The primary significance of this paper lies in its contribution to the existing body of knowledge on the specified topic. By corroborating the findings of prior research papers, this study aims to reinforce and validate the existing literature, thereby enhancing the robustness and reliability of the overall understanding of the field. Emphasize the specific aspects or insights where this paper aligns with or extends the conclusions drawn in previous research. In the final stages of our analysis, a crucial component involves a rigorous comparison between the model developed in this paper and the results available on \href{https://www.kaggle.com/code/ashydv/housing-price-prediction-linear-regression/notebook}{Kaggle}. The expected outcome is to try to produce a model that is more efficient than the one provided with the data set. By benchmarking our model against a Kaggle reference, we seek to evaluate its efficiency and effectiveness in predicting housing prices. This comparative analysis serves as a valuable validation step, allowing us to assess the model's performance in the context of real-world data and industry standards. The anticipated outcome of this comparative analysis is to identify areas of improvement and efficiency enhancement in our model when contrasted with the Kaggle benchmark. We aim not only to replicate but to surpass the predictive accuracy and performance metrics achieved by the existing Kaggle model. 
+
+% A roadmap
+The structural framework of this paper unfolds in a systematic progression, commencing with the overarching introduction encapsulated in Section~\ref{sec:intro}. Moving seamlessly, Section~\ref{sec:data} offers a concise yet insightful introduction to the dataset, intricately delving into the variables at play. This section not only outlines the variables but also expounds on their individual contributions to addressing the core research question. Then, the methodology used in this paper will be explained in Section~\ref{sec:meth}. The applications of the results found will be in Section~\ref{sec:app}. This section will present the results from the model and have further analysis with tables and figures. More in-depth analysis of how the results can be applied to the real world will be in this section. Finally, the discussion part for this paper will be in Section~\ref{sec:disc}. This final section navigates through the limitations inherent in the current study, providing a transparent acknowledgment of its boundaries. Simultaneously, it paves the way for future directions, offering a roadmap for subsequent research endeavors. 
+
+
+
+\section{Data}
+\label{sec:data}
+
+% Who collected the data (source)?
+% How was the data collected? Sampling frame? Sampling approach?
+% What period or range does the data cover?
+% Why does the data help answer the research question?
+% What exploratory analyses are done (descriptives, visualization, etc.)?
+
+The data that is being utilized for this study was sourced from \href{https://www.kaggle.com/code/ashydv/housing-price-prediction-linear-regression/input}{Kaggle}. It's worth acknowledging that the data set is not expansive; rather, it constitutes a limited sample offering a snapshot of the broader housing market dynamics. This data set is comprised of \(n = 545\) observations, each representing a unique house sample, the data set is characterized by thirteen variables. Among these variables, seven fall into the categorical realm, while the remaining six are of a numerical nature. This comprehensive data set serves as the foundation for constructing and training a Multiple Linear Regression (MLR) model geared toward predicting housing costs.
+
+The preparatory phase for the data involved a strategic approach, leveraging the use of the pandas library in Python for exploration and visualization. To enhance the compatibility of the data set with the Multiple Linear Regression model, categorical variables represented as strings underwent a transformative process. Specifically, the 'furnishingstatus' column underwent a transformation, breaking it down into three distinct columns: one for furnished, one for semi-furnished, and a final one for unfurnished. This categorical refinement facilitates a more refined representation of furnishing status, laying the groundwork for a more detailed and accurate predictive model.
+
+\bigskip
+
+\begin{table}[h!]
+\caption{Data Description}
+  \label{tab:rv}
+\begin{tabular}{llll}
+  \toprule
+Variable & Data Type & Instance & Purpose \\
+  \midrule
+price & Int & 13300000 & \(Y\) \\ 
+area & Int & 7420 & \(X_{n}\) \\ 
+bedrooms & Int & 4 & \(X_{n}\) \\ 
+bathrooms & Int & 2 & \(X_{n}\) \\ 
+stories & Int & 3 & \(X_{n}\) \\ 
+mainroad & Str & yes, no & \(X_{n}\) \\
+guestroom & Str & yes, no & \(X_{n}\) \\
+basement & Str & yes, no & \(X_{n}\) \\
+hotwaterheating & Str & yes, no & \(X_{n}\) \\
+airconditioning & Str & yes, no & \(X_{n}\) \\
+parking & Int & 2 & \(X_{n}\) \\
+prefarea & Str & yes, no & \(X_{n}\) \\
+furnishingstatus & Str & furnished, semi-furnished, unfurnished & \(X_{n}\) \\
+   \bottomrule
+\end{tabular}\par
+\bigskip
+In Table~\ref{tab:rv}, the 'variable' column shows the names of all the variables that are in the dataset. The 'Data Type' column shows the data type of each variable in the dataset. Note that 'Int' means integer and 'Str' means string. The 'Instance' column shows an example of what a data point for that column would look like. The 'Purpose' column shows the importance of each variable to the machine learning step.
+\end{table}
+
+\begin{figure}
+    \caption{Categorical Variable Plots}
+    \includegraphics[width=1\textwidth]{categorical_plots.pdf}
+    \label{fig:categorical_plots}
+In figure~\ref{fig:categorical_plots}, the plots show the distributions for all the categorical variables. Most of the houses in this data set are located near a main road. Only one-fifth of the houses have a room for guests. For the basement category, two-fifths of them have one. Almost none of the houses have hot water heating. There is air conditioning in about two-fifths of the data. About one-fifth of the houses are located in a preferred area. And lastly, the house can come either furnished, semi-furnished, or unfurnished. Most of the house came semi-furnished, next being unfurnished and then fully furnished. 
+\end{figure}
+
+\begin{figure}
+    \caption{Numerical Variable Plots}
+    \includegraphics[width=1\textwidth]{numerical_plots.pdf}
+    \label{fig:numberical_plots}
+In figure~\ref{fig:numberical_plots}, four different plots are shown to display the distribution of the numerical variables in the data. The average number of bedrooms in these homes is three, with two being the second most. For the number of bathrooms, the majority of homes have one. About half of the homes in the data are one-story homes while about the other half are two stories. For parking, most of them have no parking spots. A few of them have one or two parking spots. 
+\end{figure}
+
+\section{Methods}
+\label{sec:meth}
+
+% Establish notation.
+% What are the observed data?
+% What are the models?
+% What are the parameters to be estimated?
+% How are the point estimators obtained?
+% How are the uncertainty (standard errors) of the point estimators assessed?
+% How are the variances of the point estimators estimated?
+% How are the null distribution of the testing statistics established?
+% Clearly state the assumptions and claims of theoretical results.
+The data was first processed by making all the variables in the data able to be read by the model. The first variable that was altered was the status of the house being furnished. It was converted into dummy variables. A one in the dummy variable would mean that the house was in that current status and a zero would mean that it was not in that status. After that, the next step was to convert the yes and no entries to 1's and 0's. This was done to the variables mainroad, guestroom, basement, hotwaterheating, airconditioning, and prefarea. Before splitting the data set into training and testing groups, the variables were scaled because the values for price and the area of the house were significantly larger than the other values in the data set. Scaling is needed here because we want the values from each variable to contribute equally to the model and avoid the overpowering features with larger values. Finally, the data is split into \(80\%\) for training and 20\% for testing. The size of the training group was arbitrarily chosen to be greater than the size of the testing set to ensure that the multiple linear regression model is trained on as much data as possible to find and learn meaningful patterns. It is widely accepted for training data to be larger than testing data. An inadequate amount of training data can result in a poor-performing model that underfits and does not generalize to new instances well. A multiple linear regression model was fitted to the training group and then validated on the testing group using the scikit-learn library in Python. Several performance metrics about the predictions were then assessed.
+
+
+\begin{equation}
+  \label{eq:Multi}
+  Y = \beta_{0} + \beta_{1}X_{1} + \beta_{2}X_{2} + ... + \beta_{n}X_{n} + \epsilon
+\end{equation}
+
+Equation~\ref{eq:Multi} is the Multiple Linear Regression model being used. \(Y\) is the dependent variable, also known as the value that is being predicted. In this case, it would be the cost of a house. \(X_{n}\) is the independent variable, which is the characteristics of the house that are used to predict the house cost. \(\beta_{n}\) is the average amount by which the dependent variable increases and decreases depending on when the independent variable increases one standard deviation. When all the other independent variables are held constant. \(\beta_{0}\) represents the value of the dependent variable when all the independent variables are equal to zero. \(\epsilon\) is the error term which represents the margin of error within the linear regression model. \cite{uyanik2013}
+
+
+
+\section{Application}
+\label{sec:app}
+
+% Report the statistical analyses in tables/figures.
+% When summarizing from tables/figures, paint the big picture, rather than reiterating all of the little details.
+% Discussions to link the analyses 
+
+This linear regression model aims to predict the house price with the different characteristics of a house by using the trained data and testing it against the testing data. To see how well the model performed in predicting the house prices, R-squared was used and a visualization was created to help see the results. The figure below represents how the model did with predicting the house prices. As we can see, there is a clear trend in the plot showing the accuracy of the model. One noticeable trend in the plot is that the model's predicted value of the house is undervalued compared to the actual price of the house. This trend with the model can be supported with the R-squared value.
+
+\begin{align}
+\label{eq:R2}
+\begin{split}
+    R^2 &= 1 - \frac{\text{sum squared regression (SSR)}}{\text{total sum of squares (SST)}}, \\
+    &= 1-\frac{\sum(y_i - \hat{y_i})^2 }{\sum(y_i - \Bar{y})^2} 
+\end{split}
+\end{align}
+
+Equation~\ref{eq:R2} is the formula for R-squared. R-squared is a measure of the goodness of fit of a model. The sum squared regression is the sum of the residuals squared and the total sum of squares is the sum of the distance the data is away from the mean all squared. It is a percentage that takes the values between 0 and 1. If the percentage is 1, then the variation in the \(y\) values is accounted for by the \(x\) values. If the percentage is 0, then none of the variations of the \(y\) values is accounted for by the \(x\) values. \cite{kasuya2018}
+
+\begin{figure}[h!]
+    \caption{Linear Regression Plot}
+    \includegraphics[width=1\textwidth]{linear_regression_plot.pdf}
+    \label{fig:regression_plot}
+\end{figure}
+Figure~\ref{fig:regression_plot} shows a linear regression plot with the predicted house price against the actual house price. Based on this plot that was created, it looks like the model was somewhat accurate in predicting the prices. 
+
+\begin{table}[h!]
+\caption{Results}
+  \label{tab:re}
+ \begin{center} 
+\begin{tabular}{ll}
+  \toprule
+Measurement & Outcome \\
+  \midrule
+\(R^2\) & 0.6529 \\ 
+Mean Absolute Error & 970043.4039 \\
+Root Mean Squared Error & 3.0776 \\
+   \bottomrule
+\end{tabular}\par
+\end{center}
+\end{table}
+Table~\ref{tab:re} shows the results of the multiple linear regression model from the paper.
+
+The calculated R-squared value for the model produced in this paper was 0.6529. A R-squared value of 0.6529 indicates the proportion of the variance in the dependent variable that can be explained by the independent variables in a multiple linear regression model. In other terms, about 65.29\% of the variability in the observed data can be accounted for by the model. The remaining 34.71\% of the variance is unaccounted for and may be attributed to other factors not included in your model or to random variability.
+
+In comparison with the model produced in \href{https://www.kaggle.com/code/ashydv/housing-price-prediction-linear-regression/notebook}{Kaggle}, it is slightly better. The Kaggle model had a R-squared value of 0.5791. A R-squared value of 0.5791 suggests that approximately 57.91\% of the variance in the dependent variable can be explained by the independent variables in your regression model. The model that was produced in the paper has a better R-squared value of about 7.38\%. 
+
+\section{Discussion and Conclusion}
+\label{sec:disc}
+
+% A summary, again, of the contributions of the research.
+In summary, this paper makes a substantial contribution to the existing body of knowledge within the specified research domain by reinforcing and validating findings from prior research. The study emphasizes specific aspects where it aligns with or extends conclusions drawn in earlier works. In the final stages of analysis, a rigorous comparison with a Kaggle reference is undertaken, with the aim of surpassing the predictive accuracy of the existing model. This comparative analysis serves as a crucial validation step, providing insights into potential areas for improvement and efficiency enhancement. The paper aspires to advance predictive modeling in housing price prediction beyond current benchmarks, contributing to the evolving landscape of statistical methodologies in the field.
+
+% The research question posed as the `need’ of the introduction must be answered here (Zeiger 2000).
+% Limitations of the current study
+One limitation of this current study is that this data set is very small and has very limited variables. The next step for this study is to gain access to a data set from the actual house market and produce a model with it. Another factor that can limit this study is that nowadays, there are infinite numbers of factors that can affect the cost of a house. So creating a model to include all these new factors is practically impossible. 
+
+% Future directions.
+Over the past decade, the United States has experienced three recessions, highlighting the dynamic nature of its economic landscape. Beyond the traditional focus on housing prices, the imperative now extends to constructing a more robust predictive model with the precision to forecast overall market trends. This expanded model not only discerns fluctuations in the real estate market but also holds the potential to anticipate broader economic shifts. The ultimate goal is to transcend the confines of predicting housing prices alone and, instead, develop a tool that can provide insights into the timing and indicators of future recessions. In this way, the enhanced model becomes a strategic asset for decision-makers navigating the intricacies of economic cycles.
+
+The logical progression for advancing this study involves a strategic expansion of the data set, with a particular focus on capturing a more extensive and diverse range of housing market dynamics. The envisioned next step entails acquiring a larger data set, extending beyond the current scope, and delving into various communities across the United States. Recognizing the inherent socioeconomic variations among different communities, particularly disparities in income brackets, opens up an opportunity for analysis and model refinement.
+
+By systematically gathering data from distinct communities, each characterized by its unique economic landscape, we can aim to create a more comprehensive and representative data set. This approach can enable new researchers to examine how local economic factors and community-specific variables contribute to variations in housing prices. The inherent diversity in income levels and economic conditions across communities provides a rich terrain for exploration. This multifaceted analysis can uncover insights into the nuanced relationships between socioeconomic factors, geographical location, and housing market dynamics. It may unveil community-specific variables that exert significant influence on housing prices, contributing to a more accurate and contextually sensitive predictive model.
+
+
+% Every reference cited in the paper should appear here.
+% References not cited should not appear here.
+% All are automatically taken care of by BibTeX.
+% Styles are controlled by bib style (.bst file).
+
+
+\medskip
+
+\printbibliography[title={References}]
+
+
+\end{document}

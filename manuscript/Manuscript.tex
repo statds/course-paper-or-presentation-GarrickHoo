@@ -166,6 +166,23 @@ Equation~\ref{eq:R2} is the formula for R-squared. R-squared is a measure of the
 \end{figure}
 Figure~\ref{fig:regression_plot} shows a linear regression plot with the predicted house price against the actual house price. Based on this plot that was created, it looks like the model was somewhat accurate in predicting the prices. 
 
+\begin{table}[h!]
+\caption{Results}
+  \label{tab:re}
+ \begin{center} 
+\begin{tabular}{ll}
+  \toprule
+Measurement & Outcome \\
+  \midrule
+\(R^2\) & 0.6529 \\ 
+Mean Absolute Error & 970043.4039 \\
+Root Mean Squared Error & 3.0776 \\
+   \bottomrule
+\end{tabular}\par
+\end{center}
+\end{table}
+Table~\ref{tab:re} shows the results of the multiple linear regression model from the paper.
+
 The calculated R-squared value for the model produced in this paper was 0.6529. A R-squared value of 0.6529 indicates the proportion of the variance in the dependent variable that can be explained by the independent variables in a multiple linear regression model. In other terms, about 65.29\% of the variability in the observed data can be accounted for by the model. The remaining 34.71\% of the variance is unaccounted for and may be attributed to other factors not included in your model or to random variability.
 
 In comparison with the model produced in \href{https://www.kaggle.com/code/ashydv/housing-price-prediction-linear-regression/notebook}{Kaggle}, it is slightly better. The Kaggle model had a R-squared value of 0.5791. A R-squared value of 0.5791 suggests that approximately 57.91\% of the variance in the dependent variable can be explained by the independent variables in your regression model. The model that was produced in the paper has a better R-squared value of about 7.38\%. 

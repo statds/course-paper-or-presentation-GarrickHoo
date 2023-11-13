@@ -72,9 +72,11 @@ The structural framework of this paper unfolds in a systematic progression, comm
 % Why does the data help answer the research question?
 % What exploratory analyses are done (descriptives, visualization, etc.)?
 
-The data that will be used for this study was sourced from \href{https://www.kaggle.com/code/ashydv/housing-price-prediction-linear-regression/input}{Kaggle}. It is a data set that contains \(n = 545\) observations (different house samples) of thirteen variables, seven of which are categorical variables and six are numerical variables. The data set contains features and corresponding labels for training and testing a Multiple Linear Regression (MLR) model to predict the house cost.
-To prepare the data for modeling, the pandas library in Python was employed for exploration and visualization. For the columns that were strings, they have been transformed into an integer data type so that they can be read in the model. More specifically, the 'furnishingstatus' column was broken down into three different columns. One for furnished, one for semi-furnished, and lastly one for unfurnished. 
+The data that is being utilized for this study was sourced from \href{https://www.kaggle.com/code/ashydv/housing-price-prediction-linear-regression/input}{Kaggle}. It's worth acknowledging that the data set is not expansive; rather, it constitutes a limited sample offering a snapshot of the broader housing market dynamics. This data set is comprised of \(n = 545\) observations, each representing a unique house sample, the data set is characterized by thirteen variables. Among these variables, seven fall into the categorical realm, while the remaining six are of a numerical nature. This comprehensive data set serves as the foundation for constructing and training a Multiple Linear Regression (MLR) model geared toward predicting housing costs.
 
+The preparatory phase for the data involved a strategic approach, leveraging the use of the pandas library in Python for exploration and visualization. To enhance the compatibility of the data set with the Multiple Linear Regression model, categorical variables represented as strings underwent a transformative process. Specifically, the 'furnishingstatus' column underwent a transformation, breaking it down into three distinct columns: one for furnished, one for semi-furnished, and a final one for unfurnished. This categorical refinement facilitates a more refined representation of furnishing status, laying the groundwork for a more detailed and accurate predictive model.
+
+\bigskip
 
 \begin{table}[h!]
 \caption{Data Description}

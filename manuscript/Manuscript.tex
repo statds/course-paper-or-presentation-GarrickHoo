@@ -12,7 +12,7 @@ style=alphabetic,
 \usepackage{amsmath} 
 
 
-\title{Predicting the Housing Market using \\ Linear Regression}
+\title{Predicting the Housing Market using \\  Multiple Linear Regression}
 
 \author{Garrick Ho\\
   Jun Yan\\[1ex]
@@ -31,10 +31,10 @@ With the housing market fluctuating every year, many real estate owners and busi
 
 \bigskip
 \noindent{\sc Keywords}:
-housing market;
-natural language processing;
-linear regression;
-model predictions
+housing market prediction;
+model predictions;
+multiple linear regression;
+natural language processing
 
 
 \end{abstract}
@@ -140,8 +140,6 @@ The data was first processed by making all the variables in the data able to be 
 
 Equation~\ref{eq:Multi} is the Multiple Linear Regression model being used. \(Y\) is the dependent variable, also known as the value that is being predicted. In this case, it would be the cost of a house. \(X_{n}\) is the independent variable, which is the characteristics of the house that are used to predict the house cost. \(\beta_{n}\) is the average amount by which the dependent variable increases and decreases depending on when the independent variable increases one standard deviation. When all the other independent variables are held constant. \(\beta_{0}\) represents the value of the dependent variable when all the independent variables are equal to zero. \(\epsilon\) is the error term which represents the margin of error within the linear regression model. \cite{uyanik2013}
 
-
-
 \section{Application}
 \label{sec:app}
 
@@ -188,6 +186,26 @@ Table~\ref{tab:re} shows the results of the multiple linear regression model fro
 The calculated R-squared value for the model produced in this paper was 0.6529. A R-squared value of 0.6529 indicates the proportion of the variance in the dependent variable that can be explained by the independent variables in a multiple linear regression model. In other terms, about 65.29\% of the variability in the observed data can be accounted for by the model. The remaining 34.71\% of the variance is unaccounted for and may be attributed to other factors not included in your model or to random variability.
 
 In comparison with the model produced in \href{https://www.kaggle.com/code/ashydv/housing-price-prediction-linear-regression/notebook}{Kaggle}, it is slightly better. The Kaggle model had a R-squared value of 0.5791. A R-squared value of 0.5791 suggests that approximately 57.91\% of the variance in the dependent variable can be explained by the independent variables in your regression model. The model that was produced in the paper has a better R-squared value of about 7.38\%. 
+
+asgfsgdfsgjdfg\cite{CFA}
+
+\begin{figure}[h!]
+    \caption{Linearity Check}
+    \includegraphics[width=1\textwidth]{linearity_check.pdf}
+    \label{fig:linearity_check}
+\end{figure}
+
+\begin{figure}[h!]
+    \caption{Homoskedasticity Check}
+    \includegraphics[width=1\textwidth]{homoskedasticity_check.pdf}
+    \label{fig:homoskedasticity_check}
+\end{figure}
+
+\begin{figure}[h!]
+    \caption{Residuals Distribution}
+    \includegraphics[width=1\textwidth]{residuals_distribution.pdf}
+    \label{fig:residuals_distribution}
+\end{figure}
 
 \section{Discussion and Conclusion}
 \label{sec:disc}

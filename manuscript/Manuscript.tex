@@ -10,6 +10,7 @@ style=alphabetic,
 ]{biblatex}
 \addbibresource{references.bib}
 \usepackage{amsmath} 
+\usepackage{csvsimple}
 
 
 \title{Predicting the Housing Market using \\  Multiple Linear Regression}
@@ -205,8 +206,21 @@ Figure~\ref{fig:homoskedasticity_check} shows the relationship between the predi
 
 \bigskip
 \bigskip
-\bigskip
-\bigskip
+
+\begin{table}[h!]
+\caption{Durbin-Watson statistic}
+  \label{tab:re}
+ \begin{center} 
+\begin{tabular}{ll}
+  \toprule
+Statistic & Value \\
+  \midrule
+Durbin-Watson & 2.3003 \\ 
+   \bottomrule
+\end{tabular}\par
+\end{center}
+\end{table}
+Table~\ref{tab:re} showcases the findings derived from the Durbin-Watson statistic. This is a measure of gauging autocorrelation in the residuals of a regression model. It has a span from zero to four. A value of two indicates an absence of autocorrelation. Values exceeding two denote positive autocorrelation, while those falling below two indicate its negative counterpart. The Durbin-Watson statistic of 2.3003 indicates that there is no significant autocorrelation in the residuals of the regression model. This means that the model is a good fit for the data and that the results are reliable.
 
 \begin{figure}[h!]
     \caption{Residuals Distribution}
@@ -215,7 +229,34 @@ Figure~\ref{fig:homoskedasticity_check} shows the relationship between the predi
 \end{figure}
 Figure~\ref{fig:residuals_distribution} shows the distribution of residuals in the model. The mean of the residuals is close to zero, the distribution is symmetrical around the mean, and the residuals are evenly spread out around the mean. This suggests that the regression model is well-specified and that the assumptions of normality are met. Overall, the residuals distribution plot in the image you provided is a good sign. It suggests that the regression model can make accurate predictions.
 
+\begin{table}[h!]
+\caption{VIF Results}
+  \label{tab:re}
+ \begin{center} 
+\begin{tabular}{ll}
+  \toprule
+Variable & VIF \\
+  \midrule
+Area & 1.325 \\ 
+Bedrooms & 1.3695 \\
+Bathrooms & 1.2867 \\
+Stories & 1.4781 \\
+Main road & 1.1727 \\
+Guestroom & 1.2128 \\
+Basement & 1.3231 \\
+Hot water heating & 1.042 \\
+Air conditioning & 1.2118 \\
+Parking & 1.2128 \\
+Prefarea & 1.1492 \\
+Status furnished & 8.5758 \\
+Status semi-furnished & 12.4043 \\
+Status unfurnished & 8.8262 \\
+   \bottomrule
+\end{tabular}\par
+\end{center}
+\end{table}
 
+Table~\ref{tab:re} shows the correlation between each independent variable and the other independent variables in the model. A VIF value greater than five indicates that there is a high degree of correlation between the variable and the other variables in the model. This can lead to problems with multicollinearity, which can affect the accuracy of the model. Besides the last three variables, there is no serious multicollinearity in the model. 
 
 \section{Discussion and Conclusion}
 \label{sec:disc}

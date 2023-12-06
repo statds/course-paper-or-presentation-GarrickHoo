@@ -187,32 +187,39 @@ The calculated R-squared value for the model produced in this paper was 0.6529. 
 
 In comparison with the model produced in \href{https://www.kaggle.com/code/ashydv/housing-price-prediction-linear-regression/notebook}{Kaggle}, it is slightly better. The Kaggle model had a R-squared value of 0.5791. A R-squared value of 0.5791 suggests that approximately 57.91\% of the variance in the dependent variable can be explained by the independent variables in your regression model. The model that was produced in the paper has a better R-squared value of about 7.38\%. This suggests that the regression model outlined in the paper provides a more robust and comprehensive explanation for the variability observed in the dependent variable, thereby enhancing its predictive accuracy and overall effectiveness.
 
-With a regression model that seems better than the one produced in Kaggle, it is imperative to ensure the fulfillment of five fundamental assumptions to guarantee the reliability and validity of statistical inferences. Firstly, the assumption of linearity asserts that the relationship between the dependent and independent variables is adequately represented by a linear function. Homoskedasticity, the second assumption, demands that the variance of the model's residuals remains constant across all levels of the independent variables, emphasizing the importance of a consistent spread of errors. Independence of errors, the third assumption, underscores the necessity for the residuals to be uncorrelated and exhibit no discernible pattern, safeguarding against systematic errors or biases. Normality, the fourth assumption, involves verifying that the residuals follow a normal distribution, ensuring the validity of statistical tests and confidence intervals. The fifth assumption, independence of independent variables, calls for the absence of multicollinearity, emphasizing that predictor variables should not exhibit high correlation, which might lead to unstable coefficient estimates.\cite{CFA}
+With a regression model that seems better than the one produced in Kaggle, it is imperative to ensure the fulfillment of five fundamental assumptions to guarantee the reliability and validity of statistical inferences. Firstly, the assumption of linearity asserts that the relationship between the dependent and independent variables is adequately represented by a linear function. Homoskedasticity, the second assumption, demands that the variance of the error term in a regression model is constant across all values of the independent variables, emphasizing the importance of a consistent spread of errors. Independence of errors, the third assumption, underscores the necessity for the residuals to be uncorrelated and exhibit no discernible pattern, safeguarding against systematic errors or biases. Normality, the fourth assumption, involves verifying that the residuals follow a normal distribution, ensuring the validity of statistical tests and confidence intervals. The fifth assumption, independence of independent variables, calls for the absence of multicollinearity, emphasizing that predictor variables should not exhibit high correlation, which might lead to unstable coefficient estimates.\cite{CFA}
 
 \begin{figure}[h!]
     \caption{Linearity Check}
     \includegraphics[width=1\textwidth]{linearity_check.pdf}
     \label{fig:linearity_check}
 \end{figure}
-Figure~\ref{fig:linearity_check} shows a scatter plot of predicted values versus actual values. The predicted values are on the horizontal axis and the actual values are on the vertical axis. Each dot on the plot represents a single data point. The data points are tightly clustered around a straight line, which indicates a linear relationship between the two variables. The plot shows a strong positive correlation between the predicted and actual values, meaning that as the predicted values increase, the actual values also tend to increase. This linearity check indicates that the machine learning model is able to make somewhat accurate predictions.
+Figure~\ref{fig:linearity_check} shows a scatter plot of predicted values versus actual values. The predicted values are on the horizontal axis and the actual values are on the vertical axis. Each dot on the plot represents a single data point. The data points are tightly clustered around a straight line, which indicates a linear relationship between the two variables. The plot shows a strong positive correlation between the predicted and actual values, meaning that as the predicted values increase, the actual values also tend to increase. This linearity check indicates that the machine learning model can make somewhat accurate predictions. 
 
 \begin{figure}[h!]
     \caption{Homoskedasticity Check}
     \includegraphics[width=1\textwidth]{homoskedasticity_check.pdf}
     \label{fig:homoskedasticity_check}
 \end{figure}
+Figure~\ref{fig:homoskedasticity_check} shows the relationship between the predicted values and the residuals. If the residuals are evenly spread out around the zero line, regardless of the predicted values, then homoskedasticity is present. In this plot, it shows a slight fanning out of the residuals as the predicted values increase. This suggests that the variance of the error term may be increasing with the predicted values, which would be a violation of the homoskedasticity assumption. The mean of the residuals is close to zero, the distribution is symmetrical around the mean, and the residuals are evenly spread out around the mean. This suggests that the regression model is well-specified and that the assumptions of normality are met. Overall, the residuals distribution plot in the image you provided is a good sign. It suggests that the regression model can make accurate predictions.
+
+\bigskip
+\bigskip
+\bigskip
+\bigskip
 
 \begin{figure}[h!]
     \caption{Residuals Distribution}
     \includegraphics[width=1\textwidth]{residuals_distribution.pdf}
     \label{fig:residuals_distribution}
 \end{figure}
+Figure~\ref{fig:residuals_distribution} shows the distribution of residuals in the model. 
 
 \section{Discussion and Conclusion}
 \label{sec:disc}
 
 % A summary, again, of the contributions of the research.
-In summary, this paper makes a substantial contribution to the existing body of knowledge within the specified research domain by reinforcing and validating findings from prior research. The study emphasizes specific aspects where it aligns with or extends conclusions drawn in earlier works. In the final stages of analysis, a rigorous comparison with a Kaggle reference is undertaken, with the aim of surpassing the predictive accuracy of the existing model. This comparative analysis serves as a crucial validation step, providing insights into potential areas for improvement and efficiency enhancement. The paper aspires to advance predictive modeling in housing price prediction beyond current benchmarks, contributing to the evolving landscape of statistical methodologies in the field.
+In summary, this paper makes a substantial contribution to the existing body of knowledge within the specified research domain by reinforcing and validating findings from prior research. The study emphasizes specific aspects where it aligns with or extends conclusions drawn in earlier works. In the final stages of analysis, a rigorous comparison with a Kaggle reference is undertaken, to surpass the predictive accuracy of the existing model. This comparative analysis serves as a crucial validation step, providing insights into potential areas for improvement and efficiency enhancement. The paper aspires to advance predictive modeling in housing price prediction beyond current benchmarks, contributing to the evolving landscape of statistical methodologies in the field.
 
 % The research question posed as the `need’ of the introduction must be answered here (Zeiger 2000).
 % Limitations of the current study

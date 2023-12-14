@@ -47,20 +47,19 @@ natural language processing
 % What has already been done?
 % What is new?
 
-The United States has been through three recessions in the last decade. And during that decade, house prices have reached the very bottom of the market and also reached the very top of the market. The market has tripled since 1992. After a brief dip in 2002-2003, they bounced back and skyrocketed over 20\% from May 2003 to November 2004. \cite{Jacobsen2005} Because of the constant change, new models for predicting the housing market also need to change so that the model can stay up to date with the changes that occur. This is important because it gives people insights into whether it's a good time to buy or sell a property, helps policymakers make informed decisions, and allows investors to strategize their moves. House price predictions can help the developer determine the selling price of a house and can also help the customer arrange the right time to purchase a house. \cite{alfiyantin2017} 
+The United States has been through three recessions in the last decade. During that decade, house prices have reached the very bottom of the market and also reached the very top of the market. The market has tripled since 1992. After a brief dip in 2002-2003, they bounced back and skyrocketed over 20\% from May 2003 to November 2004. \cite{Jacobsen2005} Because of the constant change, new models for predicting the housing market also need to change so that the model can stay up to date with the changes that occur. This is important because it gives people insights into whether it's a good time to buy or sell a property, helps policymakers make informed decisions, and allows investors to strategize their moves. House price predictions can help the developer determine the selling price of a house and can also help the customer arrange the right time to purchase a house. \cite{alfiyantin2017} 
 
 Engineers in the past had to face a significant challenge in forecasting and assessing house prices. Fortunately, with technological advances, machine learning algorithms offer a solution, enabling users to predict house prices by training data sets on various algorithms. The market is currently flooded with software and models designed to enhance the accuracy of house price predictions, minimizing errors to negligible levels. These predictions can be based on the analysis of different aspects of a house, such as kitchen size, bedroom count, bathroom count, and overall land area. These aspects of a house can go on forever. Analysts employ various techniques to compute and analyze data,  to ensure that the predictions are aligned closely with previous estimations. \cite{singh2021}
 
-Existing methods for predicting housing prices often rely on traditional statistical models that may struggle to capture the complexity and non-linear relationships present in real estate markets. Additionally, these models may not effectively incorporate the wide range of features that influence property values. An attractive solution would involve leveraging advanced machine learning techniques, such as multiple linear regression, to handle the complexity and non-linearity of the data. This allows the model to learn intricate patterns and relationships that may be challenging for traditional methods. Additionally, a comprehensive solution should consider factors such as location, economic indicators, property characteristics, and even social trends to build a more accurate and robust predictive model. The key is to strike a balance between model complexity and interpretability while ensuring it can effectively handle the diverse and dynamic nature of the real estate market.
 % An overview of the topic
 % Existing works
 % Why are existing methods not sufficient? What are the elements of an attractive solution?
 % Contributions
 
-The primary significance of this paper lies in its contribution to the existing body of knowledge on the specified topic. By corroborating the findings of prior research papers, this study aims to reinforce and validate the existing literature, thereby enhancing the robustness and reliability of the overall understanding of the field. Emphasize the specific aspects or insights where this paper aligns with or extends the conclusions drawn in previous research. In the final stages of our analysis, a crucial component involves a rigorous comparison between the model developed in this paper and the results available on \href{https://www.kaggle.com/code/ashydv/housing-price-prediction-linear-regression/notebook}{Kaggle}. The expected outcome is to try to produce a model that is more efficient than the one provided with the data set. By benchmarking our model against a Kaggle reference, we seek to evaluate its efficiency and effectiveness in predicting housing prices. This comparative analysis serves as a valuable validation step, allowing us to assess the model's performance in the context of real-world data and industry standards. The anticipated outcome of this comparative analysis is to identify areas of improvement and efficiency enhancement in our model when contrasted with the Kaggle benchmark. We aim not only to replicate but to surpass the predictive accuracy and performance metrics achieved by the existing Kaggle model. 
+The primary significance of this paper lies in its contribution to the existing body of knowledge on the specified topic. By corroborating the findings of prior research papers, this study aims to reinforce and validate the existing studies. Emphasize the specific insights where this paper aligns with and extends the conclusions from other studies. In the final stages of our analysis, a comparison will be done between the model developed in this paper and the results available on \href{https://www.kaggle.com/code/ashydv/housing-price-prediction-linear-regression/notebook}{Kaggle}. The expected outcome is to try to produce a model that is more efficient than the one provided with the current data set. By benchmarking our model against a Kaggle reference, we seek to evaluate its efficiency and effectiveness in predicting housing prices. This comparative analysis serves as a valuable validation step, allowing us to assess the model's performance. We aim not only to replicate but to surpass the predictive accuracy and performance metrics achieved by the existing Kaggle model. 
 
 % A roadmap
-The structural framework of this paper unfolds in a systematic progression, commencing with the overarching introduction encapsulated in Section~\ref{sec:intro}. Moving seamlessly, Section~\ref{sec:data} offers a concise yet insightful introduction to the dataset, intricately delving into the variables at play. This section not only outlines the variables but also expounds on their individual contributions to addressing the core research question. Then, the methodology used in this paper will be explained in Section~\ref{sec:meth}. The applications of the results found will be in Section~\ref{sec:app}. This section will present the results from the model and have further analysis with tables and figures. More in-depth analysis of how the results can be applied to the real world will be in this section. Finally, the discussion part for this paper will be in Section~\ref{sec:disc}. This final section navigates through the limitations inherent in the current study, providing a transparent acknowledgment of its boundaries. Simultaneously, it paves the way for future directions, offering a roadmap for subsequent research endeavors. 
+The structural framework of this paper unfolds in a systematic progression, commencing with the overarching introduction encapsulated in Section~\ref{sec:intro}. Moving seamlessly, Section~\ref{sec:data} offers a concise yet insightful introduction to the dataset, intricately delving into the variables at play. This section not only outlines the variables but also expounds on their individual contributions to addressing the core research question. Then, the methodology used in this paper will be explained in Section~\ref{sec:meth}. The applications of the results found will be in Section~\ref{sec:app}. This section will present the results from the model and have further analysis with tables and figures. More in-depth analysis of how the results can be applied to the real world will be in this section. Finally, the discussion part for this paper will be in Section~\ref{sec:disc}. This final section navigates through the limitations inherent in the current study, providing a transparent acknowledgment of its boundaries and future directions. 
 
 
 
@@ -73,9 +72,9 @@ The structural framework of this paper unfolds in a systematic progression, comm
 % Why does the data help answer the research question?
 % What exploratory analyses are done (descriptives, visualization, etc.)?
 
-The data that is being utilized for this study was sourced from \href{https://www.kaggle.com/code/ashydv/housing-price-prediction-linear-regression/input}{Kaggle}. It's worth acknowledging that the data set is not expansive; rather, it constitutes a limited sample offering a snapshot of the broader housing market dynamics. This data set is comprised of \(n = 545\) observations, each representing a unique house sample, the data set is characterized by thirteen variables. Among these variables, seven fall into the categorical realm, while the remaining six are of a numerical nature. This comprehensive data set serves as the foundation for constructing and training a Multiple Linear Regression (MLR) model geared toward predicting housing costs.
+The data that is being utilized for this study was sourced from \href{https://www.kaggle.com/code/ashydv/housing-price-prediction-linear-regression/input}{Kaggle}. It's worth acknowledging that the data set is not expansive; rather, it constitutes a limited sample offering a snapshot of the broader housing market dynamics. This data set is comprised of \(n = 545\) observations, each representing a unique house sample, the data set is characterized by thirteen variables. Among these variables, seven fall into the categorical realm, while the remaining six are numerical. This comprehensive data set serves as the foundation for constructing and training a Multiple Linear Regression (MLR) model geared toward predicting housing costs.
 
-The preparatory phase for the data involved a strategic approach, leveraging the use of the pandas library in Python for exploration and visualization. To enhance the compatibility of the data set with the Multiple Linear Regression model, categorical variables represented as strings underwent a transformative process. Specifically, the 'furnishingstatus' column underwent a transformation, breaking it down into three distinct columns: one for furnished, one for semi-furnished, and a final one for unfurnished. This categorical refinement facilitates a more refined representation of furnishing status, laying the groundwork for a more detailed and accurate predictive model.
+The preparatory phase for the data involved a strategic approach, leveraging the use of the pandas library in Python for exploration and visualization. To enhance the compatibility of the data set with the Multiple Linear Regression model, categorical variables represented as strings underwent a transformative process. Specifically, the 'furnishingstatus' column transformed, breaking it down into three distinct columns: one for furnished, one for semi-furnished, and a final one for unfurnished. This categorical refinement facilitates a more refined representation of furnishing status, laying the groundwork for a more detailed and accurate predictive model.
 
 \bigskip
 
@@ -164,8 +163,8 @@ Equation~\ref{eq:R2} is the formula for R-squared. R-squared is a measure of the
     \caption{Linear Regression Plot}
     \includegraphics[width=1\textwidth]{linear_regression_plot.pdf}
     \label{fig:regression_plot}
-\end{figure}
 Figure~\ref{fig:regression_plot} shows a linear regression plot with the predicted house price against the actual house price. Based on this plot that was created, it looks like the model was somewhat accurate in predicting the prices. 
+\end{figure}
 
 \begin{table}[h!]
 \caption{Results}
@@ -181,57 +180,41 @@ Root Mean Squared Error & 3.0776 \\
    \bottomrule
 \end{tabular}\par
 \end{center}
-\end{table}
 Table~\ref{tab:re} shows the results of the multiple linear regression model from the paper.
+\end{table}
 
 The calculated R-squared value for the model produced in this paper was 0.6529. A R-squared value of 0.6529 indicates the proportion of the variance in the dependent variable that can be explained by the independent variables in a multiple linear regression model. In other terms, about 65.29\% of the variability in the observed data can be accounted for by the model. The remaining 34.71\% of the variance is unaccounted for and may be attributed to other factors not included in your model or to random variability.
 
 In comparison with the model produced in \href{https://www.kaggle.com/code/ashydv/housing-price-prediction-linear-regression/notebook}{Kaggle}, it is slightly better. The Kaggle model had a R-squared value of 0.5791. A R-squared value of 0.5791 suggests that approximately 57.91\% of the variance in the dependent variable can be explained by the independent variables in your regression model. The model that was produced in the paper has a better R-squared value of about 7.38\%. This suggests that the regression model outlined in the paper provides a more robust and comprehensive explanation for the variability observed in the dependent variable, thereby enhancing its predictive accuracy and overall effectiveness.
 
-With a regression model that seems better than the one produced in Kaggle, it is imperative to ensure the fulfillment of five fundamental assumptions to guarantee the reliability and validity of statistical inferences. Firstly, the assumption of linearity asserts that the relationship between the dependent and independent variables is adequately represented by a linear function. Homoskedasticity, the second assumption, demands that the variance of the error term in a regression model is constant across all values of the independent variables, emphasizing the importance of a consistent spread of errors. Independence of errors, the third assumption, underscores the necessity for the residuals to be uncorrelated and exhibit no discernible pattern, safeguarding against systematic errors or biases. Normality, the fourth assumption, involves verifying that the residuals follow a normal distribution, ensuring the validity of statistical tests and confidence intervals. The fifth assumption, independence of independent variables, calls for the absence of multicollinearity, emphasizing that predictor variables should not exhibit high correlation, which might lead to unstable coefficient estimates.\cite{CFA}
-
-\begin{figure}[h!]
+\begin{figure}[t]
     \caption{Linearity Check}
     \includegraphics[width=1\textwidth]{linearity_check.pdf}
     \label{fig:linearity_check}
-\end{figure}
-Figure~\ref{fig:linearity_check} shows a scatter plot of predicted values versus actual values. The predicted values are on the horizontal axis and the actual values are on the vertical axis. Each dot on the plot represents a single data point. The data points are tightly clustered around a straight line, which indicates a linear relationship between the two variables. The plot shows a strong positive correlation between the predicted and actual values, meaning that as the predicted values increase, the actual values also tend to increase. This linearity check indicates that the machine learning model can make somewhat accurate predictions. 
 
-\begin{figure}[h!]
+\end{figure}
+
+With a regression model that seems better than the one produced in Kaggle, it is imperative to ensure the fulfillment of four fundamental assumptions to guarantee the reliability and validity of statistical inferences. Firstly, the assumption of linearity asserts that the relationship between the dependent and independent variables is adequately represented by a linear function. Homoskedasticity, the second assumption, demands that the variance of the error term in a regression model is constant across all values of the independent variables, emphasizing the importance of a consistent spread of errors. Normality, the third assumption, involves verifying that the residuals follow a normal distribution, ensuring the validity of statistical tests and confidence intervals. The fourth assumption, independence of independent variables, calls for the absence of multicollinearity, emphasizing that predictor variables should not exhibit high correlation, which might lead to unstable coefficient estimates.\cite{CFA}
+
+\begin{figure}[t]
     \caption{Homoskedasticity Check}
     \includegraphics[width=1\textwidth]{homoskedasticity_check.pdf}
     \label{fig:homoskedasticity_check}
+
 \end{figure}
-Figure~\ref{fig:homoskedasticity_check} shows the relationship between the predicted values and the residuals. If the residuals are evenly spread out around the zero line, regardless of the predicted values, then homoskedasticity is present. In this plot, it shows a slight fanning out of the residuals as the predicted values increase. This suggests that the variance of the error term may be increasing with the predicted values, which would be a violation of the homoskedasticity assumption. 
-
-\bigskip
-\bigskip
-
-\begin{table}[h!]
-\caption{Durbin-Watson statistic}
-  \label{tab:re}
- \begin{center} 
-\begin{tabular}{ll}
-  \toprule
-Statistic & Value \\
-  \midrule
-Durbin-Watson & 2.3003 \\ 
-   \bottomrule
-\end{tabular}\par
-\end{center}
-\end{table}
-Table~\ref{tab:re} showcases the findings derived from the Durbin-Watson statistic. This is a measure of gauging autocorrelation in the residuals of a regression model. It has a span from zero to four. A value of two indicates an absence of autocorrelation. Values exceeding two denote positive autocorrelation, while those falling below two indicate its negative counterpart. The Durbin-Watson statistic of 2.3003 indicates that there is no significant autocorrelation in the residuals of the regression model. This means that the model is a good fit for the data and that the results are reliable.
+Figure~\ref{fig:linearity_check} shows a scatter plot of predicted values versus actual values. The predicted values are on the horizontal axis and the actual values are on the vertical axis. Each dot on the plot represents a single data point. The data points are tightly clustered around a straight line, which indicates a linear relationship between the two variables. The plot shows a strong positive correlation between the predicted and actual values, meaning that as the predicted values increase, the actual values also tend to increase. This linearity check indicates that the machine learning model can make somewhat accurate predictions. 
 
 \begin{figure}[h!]
     \caption{Residuals Distribution}
     \includegraphics[width=1\textwidth]{residuals_distribution.pdf}
     \label{fig:residuals_distribution}
+
 \end{figure}
-Figure~\ref{fig:residuals_distribution} shows the distribution of residuals in the model. The mean of the residuals is close to zero, the distribution is symmetrical around the mean, and the residuals are evenly spread out around the mean. This suggests that the regression model is well-specified and that the assumptions of normality are met. Overall, the residuals distribution plot in the image you provided is a good sign. It suggests that the regression model can make accurate predictions.
+Figure~\ref{fig:homoskedasticity_check} shows the relationship between the predicted values and the residuals. If the residuals are evenly spread out around the zero line, regardless of the predicted values, then homoskedasticity is present. In this plot, it shows a slight fanning out of the residuals as the predicted values increase. This suggests that the variance of the error term may be increasing with the predicted values, which would be a violation of the homoskedasticity assumption. 
 
 \begin{table}[h!]
 \caption{VIF Results}
-  \label{tab:re}
+  \label{tab:ree}
  \begin{center} 
 \begin{tabular}{ll}
   \toprule
@@ -254,9 +237,12 @@ Status unfurnished & 8.8262 \\
    \bottomrule
 \end{tabular}\par
 \end{center}
-\end{table}
 
-Table~\ref{tab:re} shows the correlation between each independent variable and the other independent variables in the model. A VIF value greater than five indicates that there is a high degree of correlation between the variable and the other variables in the model. This can lead to problems with multicollinearity, which can affect the accuracy of the model. Besides the last three variables, there is no serious multicollinearity in the model. 
+\end{table}
+Figure~\ref{fig:residuals_distribution} shows the distribution of residuals in the model. The mean of the residuals is close to zero, the distribution is symmetrical around the mean, and the residuals are evenly spread out around the mean. This suggests that the regression model is well-specified and that the assumptions of normality are met. Overall, the residuals distribution plot in the image you provided is a good sign. It suggests that the regression model can make accurate predictions.
+
+
+Table~\ref{tab:ree} shows the correlation between each independent variable and the other independent variables in the model. A VIF value greater than five indicates that there is a high degree of correlation between the variable and the other variables in the model. This can lead to problems with multicollinearity, which can affect the accuracy of the model.
 
 \section{Discussion and Conclusion}
 \label{sec:disc}
@@ -273,7 +259,7 @@ Over the past decade, the United States has experienced three recessions, highli
 
 The logical progression for advancing this study involves a strategic expansion of the data set, with a particular focus on capturing a more extensive and diverse range of housing market dynamics. The envisioned next step entails acquiring a larger data set, extending beyond the current scope, and delving into various communities across the United States. Recognizing the inherent socioeconomic variations among different communities, particularly disparities in income brackets, opens up an opportunity for analysis and model refinement.
 
-By systematically gathering data from distinct communities, each characterized by its unique economic landscape, we can aim to create a more comprehensive and representative data set. This approach can enable new researchers to examine how local economic factors and community-specific variables contribute to variations in housing prices. The inherent diversity in income levels and economic conditions across communities provides a rich terrain for exploration. This multifaceted analysis can uncover insights into the nuanced relationships between socioeconomic factors, geographical location, and housing market dynamics. It may unveil community-specific variables that exert significant influence on housing prices, contributing to a more accurate and contextually sensitive predictive model.
+By systematically gathering data from distinct communities, each characterized by its unique economic landscape, we can aim to create a more comprehensive and representative data set. This approach can enable new researchers to examine how local economic factors and community-specific variables contribute to variations in housing prices. The inherent diversity in income levels and economic conditions across communities provides a rich terrain for exploration. This multifaceted analysis can uncover insights into the nuanced relationships between socioeconomic factors, geographical location, and housing market dynamics. It may unveil community-specific variables that exert a significant influence on housing prices.
 
 
 % Every reference cited in the paper should appear here.
